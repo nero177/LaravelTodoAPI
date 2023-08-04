@@ -19,17 +19,17 @@ class TodoController extends Controller
     {
         $validated = $request->validated();
         $todoService = new TodoService();
-        return $todoService->store($validated);
+        return response($todoService->store($validated), 200);
     }
 
     public function update(UpdateTodoRequest $request, $id){
         $validated = $request->validated();
         $todoService = new TodoService();
-        return $todoService->update($validated, $id);
+        return response($todoService->update($validated, $id), 200);
     }
 
     public function destroy(Request $request, $id){
         $todoService = new TodoService();
-        return $todoService->destroy($id);
+        return ['message' => $todoService->destroy($id)];
     }
 }

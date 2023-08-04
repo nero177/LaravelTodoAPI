@@ -9,9 +9,7 @@ class TodoFilter extends ModelFilter
     protected $operators = [
         'eq' => '=',
         'gt' => '>',
-        'gte' => '>=',
         'lt' => '<',
-        'lte' => '<=',
     ];
 
     protected $blacklist = ['proceedParams'];

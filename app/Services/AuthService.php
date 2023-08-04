@@ -15,10 +15,8 @@ class AuthService{
         ]);
 
         $token = $user->createToken('apptoken')->plainTextToken;
-        return [
-            'user' => $user,
-            'token' => $token
-        ];
+        
+        return ['token' => $token];
     }
     
     public function login($data){
